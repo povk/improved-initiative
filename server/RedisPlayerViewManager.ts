@@ -54,7 +54,7 @@ export class RedisPlayerViewManager implements PlayerViewManager {
     );
 
   public InitializeNew = async () => {
-    const id = probablyUniqueString();
+    const id = "314"//probablyUniqueString();
     this.redisClient.hmset(`playerviews_${id}`, {
       encounterState: JSON.stringify(
         EncounterState.Default<PlayerViewCombatantState>()
