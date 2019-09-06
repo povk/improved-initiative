@@ -54,7 +54,9 @@ export class RedisPlayerViewManager implements PlayerViewManager {
     );
 
   public InitializeNew = async () => {
-    const id = "314"//probablyUniqueString();
+    var Sentencer = require('sentencer');
+    const id = Sentencer.make("{{ adjective }}-{{ noun }}");
+
     this.redisClient.hmset(`playerviews_${id}`, {
       encounterState: JSON.stringify(
         EncounterState.Default<PlayerViewCombatantState>()
